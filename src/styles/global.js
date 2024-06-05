@@ -1,10 +1,19 @@
 import { createGlobalStyle } from "styled-components";
+import { DEVICE_BREAKPOINTS } from "./deviceBreakpoints";
 
 export default createGlobalStyle`
   * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+  }
+
+  :root {
+    font-size: 16px;
+
+    @media (max-width: ${DEVICE_BREAKPOINTS.MD}) {
+      font-size: 12px;      
+    }
   }
 
   body {
@@ -16,7 +25,7 @@ export default createGlobalStyle`
 
   body, input, button, textaarea {
    font-family: "Roboto Slab", serif;
-   font-size: 16px;
+   font-size: 1rem;
    outline: none;
   }
 
@@ -31,6 +40,18 @@ export default createGlobalStyle`
 
   button:hover, a:hover {
    filter: brightness(0.9);
+  }
+
+  ::-webkit-scrollbar {
+    width: 0.5rem;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: ${({ theme }) => theme.COLORS.BACKGROUND_700};
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: ${({ theme }) => theme.COLORS.PINK};
   }
 
 `;

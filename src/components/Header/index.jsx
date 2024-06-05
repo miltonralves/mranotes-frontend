@@ -1,6 +1,6 @@
-import { RiShutDownLine } from "react-icons/ri";
+import { RiShutDownLine, RiListCheck } from "react-icons/ri";
 import { useAuth } from "../../hooks/auth";
-import { Container, Profile, Logout } from "./styles";
+import { Container, Profile, Logout, Menu } from "./styles";
 import avatarPlaceholder from "../../assets/avatar_placeholder.svg";
 
 import { api } from "../../services/api";
@@ -21,6 +21,9 @@ export function Header() {
 
   return (
     <Container>
+      <Menu>
+        <RiListCheck />
+      </Menu>
       <Profile to="/profile">
         <img src={avatarUrl} alt={user.name} />
         <div className="">

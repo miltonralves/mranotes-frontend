@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import backgroundImg from "../../assets/background_singin.png";
+import { DEVICE_BREAKPOINTS } from "../../styles/deviceBreakpoints";
 
 export const Container = styled.div`
   height: 100vh;
@@ -26,7 +27,6 @@ export const Form = styled.form`
   > h2 {
     font-size: 24px;
     margin: 48px 0;
-
   }
 
   > p {
@@ -35,8 +35,16 @@ export const Form = styled.form`
   }
 
   > a {
-   margin-top: 124px;
-   color: ${({ theme }) => theme.COLORS.ORANGE};
+    margin-top: 124px;
+    color: ${({ theme }) => theme.COLORS.ORANGE};
+  }
+
+  @media (max-width: ${DEVICE_BREAKPOINTS.MD}) {
+    padding: 0 4rem;
+    gap: 1rem;
+    h1 {
+      font-size: 2rem;
+    }
   }
 `;
 
